@@ -1,0 +1,14 @@
+<! doctype html5>
+<html>
+
+<body>
+    <div align="center">
+      <ul>
+          {% for lien in liens : %}
+          <a href="{{lien.url}}" class="btn btn-outline-primary">{{lien.name}}</a>
+          {% endfor %}
+     </ul>
+    </div>
+
+</body>
+</html>

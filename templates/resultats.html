@@ -1,0 +1,48 @@
+<html><!DOCTYPE html5>
+{% extends "base.html" %}
+{% block title%}Resultats{% endblock title%}
+<body>
+    {% block present%}
+    {% block terms %}<h3 align="center">requete de l'utilisateur : {{terms}}</h3>{% endblock terms%}
+    <!-- {% block mesh_terms %}<h3 align="center">requete corrige par Mesh : {{terms_mesh}}</h3>{% endblock mesh_terms%} -->
+  <div class="container">  
+    <table class="table mx-auto">
+
+        <tr>
+            <th>{{header1}}</th>
+            <th>{{header2}}</th>
+            <th>{{header3}}</th>
+            <th>{{header4}}</th>
+            <th>{{header5}}</th>
+            <th>{{header6}}</th>
+            <th>{{header7}}</th>
+            <th>{{header8}}</th>
+            <th>{{header9}}</th>
+            <th>{{header10}}</th>
+            <th>{{header11}}</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{result["PMID"]}}</td>
+            <td>{{result["PMC"]}}</td>
+            <td>{{result["TI"]}}</td>
+            <td>{{result["AB"]}}</td>
+            <td>{{ clean_data(result["FAU"]) }}</td>
+            <td>{{result["DP"]}}</td>
+            <td>{{result["EDAT"]}}</td>
+            <td>{{result["LR"]}}</td>
+            <td>{{result["LID"]}}</td>
+            <td>{{ clean_data(result["MH"])}}</td>
+            <td>{{result["PL"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+    {% endblock present%}
+    
+
+</div>
+
+</body>
+
+</html>

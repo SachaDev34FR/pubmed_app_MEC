@@ -1,0 +1,34 @@
+<html><!DOCTYPE html5>
+{% extends "base.html" %}
+{% block title%}Resultats{% endblock title%}
+<body>
+    {% block present%}
+  <div class="container">  
+    <table class="table mx-auto">
+
+        <tr>
+            <th>{{header1}}</th>
+            <th>{{header2}}</th>
+            <th>{{header3}}</th>
+            <th>{{header4}}</th>
+            <th>{{header5}}</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{result["PMID"]}}</td>
+            <td>{{result["PMC"]}}</td>
+            <td>{{result["TI"]}}</td>
+            <td>{{result["AB"]}}</td>
+            <td>{{ clean_data(result["FAU"]) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+    {% endblock present%}
+    
+
+</div>
+
+</body>
+
+</html>
